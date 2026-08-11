@@ -1,0 +1,17 @@
+{
+  "name": "magrathea-oss.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static presentation site for the Magrathea OSS software constellation",
+  "scripts": {
+    "validate": "bash scripts/validate-site.sh",
+    "test:contract": "python3 tests/site_contract.py",
+    "test:browser": "node tests/browser-check.mjs"
+  },
+  "devDependencies": {
+    "playwright": "1.61.1"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

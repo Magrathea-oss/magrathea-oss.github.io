@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://magrathea-oss.github.io/sitemap.xml

@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Magrathea OSS is an open-source software constellation for self-hosted code collaboration, digital trust, and S3-compatible object storage."
+    />
+    <meta name="theme-color" content="#071d22" />
+    <meta name="color-scheme" content="dark light" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Magrathea OSS" />
+    <meta property="og:title" content="Magrathea OSS — Software made to measure" />
+    <meta
+      property="og:description"
+      content="Open infrastructure for code, trust, and data—designed from executable requirements outward."
+    />
+    <meta property="og:url" content="https://magrathea-oss.github.io/" />
+    <meta property="og:image" content="https://magrathea-oss.github.io/assets/img/og-card.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://magrathea-oss.github.io/" />
+    <link rel="icon" href="assets/img/magrathea-orbit.svg" type="image/svg+xml" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script src="assets/js/site.js" defer></script>
+    <title>Magrathea OSS — Software made to measure</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to the constellation</a>
+
+    <header class="site-header" data-site-header>
+      <div class="header-shell">
+        <a class="brand" href="./" aria-label="Magrathea OSS home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/img/magrathea-orbit.svg" alt="" width="44" height="44" />
+          </span>
+          <span class="brand-copy">
+            <strong>Magrathea</strong>
+            <span>Open source constellation</span>
+          </span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-controls="site-nav"
+          aria-expanded="false"
+        >
+          <span class="menu-toggle-lines" aria-hidden="true"></span>
+          <span>Menu</span>
+        </button>
+
+        <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+          <a href="#constellation">Constellation</a>
+          <a href="#method">System map</a>
+          <a href="#principles">Principles</a>
+          <a href="#open-source">Open source</a>
+        </nav>
+
+        <a
+          class="header-action"
+          href="https://github.com/Magrathea-oss"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>
+
+        <div class="shell hero-layout">
+          <div class="hero-copy">
+            <a class="signal-chip" href="#constellation">
+              <span class="signal-pulse" aria-hidden="true"></span>
+              Three systems in orbit
+              <span aria-hidden="true">→</span>
+            </a>
+
+            <p class="eyebrow"><span>Open source</span> / built for ownership</p>
+            <h1 id="hero-title">
+              Software<br />
+              made to<br />
+              <em>measure.</em>
+            </h1>
+            <p class="hero-lead">
+              Magrathea OSS is a constellation of self-hosted systems for
+              <strong>code</strong>, <strong>trust</strong>, and <strong>data</strong>—engineered
+              from explicit boundaries and executable behavior.
+            </p>
+
+            <div class="hero-actions" aria-label="Primary actions">
+              <a class="button button--primary" href="#constellation">
+                Explore the worlds <span aria-hidden="true">→</span>
+              </a>
+              <a
+                class="button button--secondary"
+                href="https://github.com/Magrathea-oss"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View the organization <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+
+            <dl class="hero-facts" aria-label="Shared engineering foundations">
+              <div>
+                <dt>Foundation</dt>
+                <dd>Java 21</dd>
+              </div>
+              <div>
+                <dt>Method</dt>
+                <dd>BDD-first</dd>
+              </div>
+              <div>
+                <dt>Direction</dt>
+                <dd>Self-hosted</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="constellation-console" aria-label="Magrathea product constellation">
+            <div class="console-bar">
+              <span class="console-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span>magrathea / system-map</span>
+              <span class="console-state">live map</span>
+            </div>
+
+            <div class="orbit-map" data-orbit-map>
+              <div class="map-stars" aria-hidden="true"></div>
+              <div class="map-ring map-ring--outer" aria-hidden="true"></div>
+              <div class="map-ring map-ring--inner" aria-hidden="true"></div>
+              <div class="map-axis" aria-hidden="true"></div>
+
+              <div class="map-core">
+                <img src="assets/img/magrathea-orbit.svg" alt="" width="72" height="72" />
+                <span>OSS</span>
+              </div>
+
+              <a class="world-node world-node--git" href="#git" data-world="git">
+                <span class="world-index">01</span>
+                <strong>Git</strong>
+                <small>Code</small>
+              </a>
+              <a class="world-node world-node--pki" href="#pki" data-world="pki">
+                <span class="world-index">02</span>
+                <strong>PKI</strong>
+                <small>Trust</small>
+              </a>
+              <a class="world-node world-node--store" href="#object-store" data-world="store">
+                <span class="world-index">03</span>
+                <strong>ObjectStore</strong>
+                <small>Data</small>
+              </a>
+            </div>
+
+            <div class="console-ledger" aria-label="Constellation status">
+              <span><i aria-hidden="true"></i> Explicit boundaries</span>
+              <span><i aria-hidden="true"></i> Executable contracts</span>
+              <span><i aria-hidden="true"></i> Honest status</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <aside class="mission-strip" aria-label="Magrathea mission">
+        <div class="shell mission-strip-inner">
+          <span class="mission-label">The brief</span>
+          <p>Own the source. Establish the trust. Keep the data.</p>
+          <span class="mission-coordinate" aria-hidden="true">MGR / 03.01</span>
+        </div>
+      </aside>
+
+      <section id="constellation" class="products section section--light" aria-labelledby="products-title">
+        <div class="shell">
+          <header class="section-heading reveal">
+            <p class="kicker"><span>01</span> Product constellation</p>
+            <div class="heading-grid">
+              <h2 id="products-title">Three worlds.<br />One engineering orbit.</h2>
+              <p>
+                Each project owns a clear problem space. Together they form a practical
+                foundation for teams that want to run critical developer infrastructure
+                on terms they can inspect and control.
+              </p>
+            </div>
+          </header>
+
+          <div class="product-grid">
+            <article id="git" class="product-card product-card--git reveal" data-product="git">
+              <div class="product-card-topline">
+                <span class="product-number">01 / CODE</span>
+                <span class="status status--mint"><i aria-hidden="true"></i> Validated MVP</span>
+              </div>
+              <div class="product-icon product-icon--git" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <h3>Magrathea Git</h3>
+              <p class="product-tagline">A forge with governance in its foundations.</p>
+              <p class="product-description">
+                An incrementally built, self-hosted Git collaboration server. Its current
+                boundary delivers a single-node Git-over-SSH MVP while nested namespaces,
+                policy, and the original graphical forge evolve in the open engineering plan.
+              </p>
+              <ul class="feature-list" aria-label="Magrathea Git highlights">
+                <li>Restricted Git over SSH</li>
+                <li>Nested namespace model</li>
+                <li>Typed governance direction</li>
+              </ul>
+              <div class="product-footer">
+                <span class="source-pending">Public source publication preparing</span>
+                <span class="product-arrow" aria-hidden="true">↗</span>
+              </div>
+            </article>
+
+            <article id="pki" class="product-card product-card--pki reveal" data-product="pki">
+              <div class="product-card-topline">
+                <span class="product-number">02 / TRUST</span>
+                <span class="status status--amber"><i aria-hidden="true"></i> Active development</span>
+              </div>
+              <div class="product-icon product-icon--pki" aria-hidden="true">
+                <span class="key-stem"></span><span class="key-ring"></span>
+              </div>
+              <h3>Magrathea PKI</h3>
+              <p class="product-tagline">Trust boundaries you can reason about.</p>
+              <p class="product-description">
+                A BDD-first PKI and key-management codebase with explicit X.509, SSH,
+                and CVC boundaries. It favors provider-neutral contracts, durable evidence,
+                and precise assurance statements over opaque security claims.
+              </p>
+              <ul class="feature-list" aria-label="Magrathea PKI highlights">
+                <li>PKI + KMS bounded contexts</li>
+                <li>Executable requirement catalogue</li>
+                <li>Provider-neutral key contracts</li>
+              </ul>
+              <a
+                class="product-footer product-footer--link"
+                href="https://github.com/Magrathea-oss/magrathea-pki"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Explore Magrathea PKI</span>
+                <span class="product-arrow" aria-hidden="true">↗</span>
+              </a>
+            </article>
+
+            <article id="object-store" class="product-card product-card--store reveal" data-product="store">
+              <div class="product-card-topline">
+                <span class="product-number">03 / DATA</span>
+                <span class="status status--blue"><i aria-hidden="true"></i> Engineering preview</span>
+              </div>
+              <div class="product-icon product-icon--store" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <h3>Magrathea ObjectStore</h3>
+              <p class="product-tagline">An S3-compatible horizon for your data.</p>
+              <p class="product-description">
+                An AWS S3-compatible object store built with Java 21, Spring Boot 4,
+                and WebFlux. Its architecture separates the S3 data plane, administrative
+                control plane, storage engine, and bounded fixed-cluster path.
+              </p>
+              <ul class="feature-list" aria-label="Magrathea ObjectStore highlights">
+                <li>S3-compatible object API</li>
+                <li>Reactive storage pipeline</li>
+                <li>Single-node + bounded HA3 work</li>
+              </ul>
+              <a
+                class="product-footer product-footer--link"
+                href="https://github.com/Magrathea-oss/magrathea-objectstorage"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>Explore ObjectStore</span>
+                <span class="product-arrow" aria-hidden="true">↗</span>
+              </a>
+            </article>
+          </div>
+
+          <p class="truth-note reveal">
+            <span aria-hidden="true">◆</span>
+            These projects are at different maturity levels. Their repositories and
+            executable requirement catalogues remain the source of truth; this site does
+            not imply production readiness, certification, or compliance assurance.
+          </p>
+        </div>
+      </section>
+
+      <section id="method" class="system-map section section--paper" aria-labelledby="method-title">
+        <div class="shell system-map-layout">
+          <header class="section-heading reveal">
+            <p class="kicker"><span>02</span> System map</p>
+            <h2 id="method-title">From commit<br />to custody.</h2>
+            <p class="section-intro">
+              The constellation is modular by design. Adopt one world on its own, or let
+              each bounded system reinforce the next without erasing its responsibilities.
+            </p>
+          </header>
+
+          <div class="flow-diagram reveal" aria-label="Code, trust, and data relationship">
+            <article class="flow-step flow-step--code">
+              <span class="flow-coordinate">SOURCE / 01</span>
+              <h3>Code</h3>
+              <p>Collaborate over source with explicit repository and workflow boundaries.</p>
+              <span class="flow-product">Magrathea Git</span>
+            </article>
+            <span class="flow-connector" aria-hidden="true"><i></i></span>
+            <article class="flow-step flow-step--trust">
+              <span class="flow-coordinate">IDENTITY / 02</span>
+              <h3>Trust</h3>
+              <p>Bind identities, keys, policy, and durable evidence through typed contracts.</p>
+              <span class="flow-product">Magrathea PKI</span>
+            </article>
+            <span class="flow-connector" aria-hidden="true"><i></i></span>
+            <article class="flow-step flow-step--data">
+              <span class="flow-coordinate">STORAGE / 03</span>
+              <h3>Data</h3>
+              <p>Place objects behind a familiar S3 boundary and an inspectable storage engine.</p>
+              <span class="flow-product">Magrathea ObjectStore</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="principles" class="principles section section--night" aria-labelledby="principles-title">
+        <div class="principle-orbit" aria-hidden="true"></div>
+        <div class="shell">
+          <header class="section-heading section-heading--night reveal">
+            <p class="kicker"><span>03</span> Shared principles</p>
+            <div class="heading-grid">
+              <h2 id="principles-title">Engineered as a system,<br />not a slogan.</h2>
+              <p>
+                A common visual language is useful. A common engineering discipline is
+                what makes a suite coherent.
+              </p>
+            </div>
+          </header>
+
+          <ol class="principle-grid">
+            <li class="principle-card reveal">
+              <span>01</span>
+              <h3>Behavior before ceremony</h3>
+              <p>Requirements are executable where evidence exists, and plainly incomplete where it does not.</p>
+            </li>
+            <li class="principle-card reveal">
+              <span>02</span>
+              <h3>Boundaries before coupling</h3>
+              <p>Domain, application, infrastructure, and delivery responsibilities stay visible.</p>
+            </li>
+            <li class="principle-card reveal">
+              <span>03</span>
+              <h3>Ownership before convenience</h3>
+              <p>Self-hostable paths keep control of source, trust material, and stored data close to operators.</p>
+            </li>
+            <li class="principle-card reveal">
+              <span>04</span>
+              <h3>Evidence before adjectives</h3>
+              <p>Validation scope, constraints, and unresolved work travel with every meaningful claim.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section id="open-source" class="closing section" aria-labelledby="closing-title">
+        <div class="closing-stars" aria-hidden="true"></div>
+        <div class="shell closing-layout reveal">
+          <div>
+            <p class="kicker"><span>04</span> Open source</p>
+            <h2 id="closing-title">The next world<br />starts with a boundary.</h2>
+          </div>
+          <div class="closing-copy">
+            <p>
+              Follow the repositories, inspect the architecture, and help shape software
+              intended to be understood—not merely consumed.
+            </p>
+            <a
+              class="button button--primary"
+              href="https://github.com/Magrathea-oss"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Enter the organization <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-layout">
+        <a class="brand brand--footer" href="./" aria-label="Magrathea OSS home">
+          <span class="brand-mark" aria-hidden="true">
+            <img src="assets/img/magrathea-orbit.svg" alt="" width="44" height="44" />
+          </span>
+          <span class="brand-copy">
+            <strong>Magrathea</strong>
+            <span>Open source constellation</span>
+          </span>
+        </a>
+        <p>Code · Trust · Data</p>
+        <p>© <span data-current-year>2026</span> Magrathea OSS</p>
+      </div>
+    </footer>
+  </body>
+</html>

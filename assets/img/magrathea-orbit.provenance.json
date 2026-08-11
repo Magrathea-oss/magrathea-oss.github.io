@@ -1,0 +1,11 @@
+{
+  "schema": "magrathea-original-visual-asset-provenance-v1",
+  "assetPath": "assets/img/magrathea-orbit.svg",
+  "sha256": "c1cfdeb21e057dff9372d10bba63013522d25330dc784cc5649da7c2f10639d9",
+  "origin": "Original Magrathea artwork created for Magrathea Git REQ-WEB-020",
+  "sourcePath": "graphical-web-frontend/public/magrathea-orbit.svg",
+  "adaptation": "Byte-identical reuse as the Magrathea OSS constellation mark",
+  "thirdPartySource": null,
+  "semanticIconsCopied": false,
+  "trademarkReviewRequired": false
+}

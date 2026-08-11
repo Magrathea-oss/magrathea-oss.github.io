@@ -1,0 +1,17 @@
+{
+  "name": "Magrathea OSS",
+  "short_name": "Magrathea",
+  "description": "Open-source systems for code, trust, and data.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#041a1f",
+  "theme_color": "#071d22",
+  "icons": [
+    {
+      "src": "assets/img/magrathea-orbit.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

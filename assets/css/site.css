@@ -279,6 +279,202 @@ button {
   display: none;
 }
 
+.visual-intro {
+  position: relative;
+  isolation: isolate;
+  min-height: max(44rem, 100svh);
+  overflow: hidden;
+  color: var(--night-ink);
+  background: var(--night-black);
+}
+
+.visual-intro-media,
+.visual-intro-art,
+.visual-intro-shade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.visual-intro-media {
+  z-index: -3;
+  display: block;
+}
+
+.visual-intro-art {
+  display: block;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  animation: visual-intro-drift 18s ease-in-out infinite alternate;
+}
+
+.visual-intro-shade {
+  z-index: -2;
+  background:
+    linear-gradient(90deg, rgb(1 13 16 / 76%) 0%, rgb(1 13 16 / 42%) 38%, transparent 67%),
+    linear-gradient(180deg, rgb(1 13 16 / 18%) 0%, transparent 53%, rgb(1 13 16 / 64%) 100%);
+}
+
+.visual-intro::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.18;
+  background-image:
+    linear-gradient(rgb(156 245 223 / 9%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(156 245 223 / 9%) 1px, transparent 1px);
+  background-size: 6rem 6rem;
+  mask-image: linear-gradient(90deg, #000, transparent 47%);
+  pointer-events: none;
+  content: "";
+}
+
+.visual-intro::after {
+  position: absolute;
+  z-index: -1;
+  width: min(45rem, 60vw);
+  height: min(16rem, 22vw);
+  right: -9rem;
+  bottom: -6rem;
+  border: 1px solid rgb(156 245 223 / 17%);
+  border-radius: 50%;
+  transform: rotate(-10deg);
+  pointer-events: none;
+  content: "";
+}
+
+@keyframes visual-intro-drift {
+  from { transform: scale(1.005); }
+  to { transform: scale(1.025); }
+}
+
+.visual-intro-layout {
+  position: relative;
+  z-index: 2;
+  min-height: max(44rem, 100svh);
+  padding: calc(var(--header-height) + 3rem) 0 6.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+.visual-intro-copy {
+  max-width: 47rem;
+  text-shadow: 0 4px 34px rgb(0 0 0 / 62%);
+}
+
+.visual-intro-coordinate {
+  margin: 0 0 1.25rem;
+  color: var(--signal-bright);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.65rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.visual-intro-title {
+  margin: 0;
+  color: #f4faf7;
+  font-family: var(--display-font);
+  font-size: clamp(4.6rem, 8.7vw, 8.7rem);
+  font-weight: 900;
+  letter-spacing: -0.082em;
+  line-height: 0.8;
+  text-transform: uppercase;
+}
+
+.visual-intro-title em {
+  display: inline-block;
+  margin-top: 0.15em;
+  color: var(--accent-electric);
+  font-size: 0.54em;
+  font-style: normal;
+  letter-spacing: -0.065em;
+  white-space: nowrap;
+}
+
+.visual-intro-lead {
+  margin: 1.7rem 0 0;
+  color: #c3d7d2;
+  font-size: clamp(0.9rem, 1.25vw, 1.08rem);
+  font-weight: 720;
+  letter-spacing: 0.05em;
+}
+
+.visual-intro-meta {
+  align-self: end;
+  padding-bottom: 0.1rem;
+  display: grid;
+  gap: 0.35rem;
+  color: #8fa9a4;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.52rem;
+  font-weight: 780;
+  letter-spacing: 0.11em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+.visual-intro-meta span:last-child {
+  color: #b8d8d2;
+}
+
+.visual-intro-scroll {
+  position: absolute;
+  z-index: 3;
+  bottom: 1.7rem;
+  left: 50%;
+  min-height: 3rem;
+  padding: 0.55rem 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #d9e8e4;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.58rem;
+  font-weight: 850;
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+}
+
+.visual-intro-scroll i {
+  position: relative;
+  width: 1.9rem;
+  height: 1.9rem;
+  flex: 0 0 auto;
+  border: 1px solid rgb(156 245 223 / 36%);
+  border-radius: 50%;
+  background: rgb(3 17 21 / 28%);
+  backdrop-filter: blur(8px);
+}
+
+.visual-intro-scroll i::before {
+  position: absolute;
+  width: 0.42rem;
+  height: 0.42rem;
+  top: 0.55rem;
+  left: 0.68rem;
+  border-right: 1.5px solid var(--accent-electric);
+  border-bottom: 1.5px solid var(--accent-electric);
+  transform: rotate(45deg);
+  content: "";
+}
+
+.visual-intro-scroll:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.visual-intro-scroll:hover i {
+  border-color: var(--accent-electric);
+}
+
 .hero {
   position: relative;
   isolation: isolate;
@@ -1869,6 +2065,68 @@ button {
     border-bottom: 1px solid rgb(255 255 255 / 7%);
   }
 
+  .visual-intro {
+    min-height: max(42rem, 100svh);
+  }
+
+  .visual-intro-art {
+    object-position: center;
+  }
+
+  .visual-intro-shade {
+    background:
+      linear-gradient(180deg, rgb(1 13 16 / 13%) 0%, transparent 48%, rgb(1 13 16 / 82%) 100%),
+      linear-gradient(90deg, rgb(1 13 16 / 17%), transparent 58%);
+  }
+
+  .visual-intro::before {
+    opacity: 0.1;
+    background-size: 4rem 4rem;
+    mask-image: linear-gradient(180deg, #000, transparent 42%);
+  }
+
+  .visual-intro-layout {
+    min-height: max(42rem, 100svh);
+    padding: calc(var(--header-height) + 2rem) 0 7rem;
+    align-items: end;
+  }
+
+  .visual-intro-copy {
+    max-width: 100%;
+  }
+
+  .visual-intro-coordinate {
+    margin-bottom: 0.85rem;
+    font-size: 0.54rem;
+  }
+
+  .visual-intro-title {
+    font-size: clamp(3.5rem, 16.5vw, 5.5rem);
+    line-height: 0.84;
+  }
+
+  .visual-intro-title em {
+    font-size: 0.48em;
+  }
+
+  .visual-intro-lead {
+    margin-top: 1.15rem;
+    font-size: 0.82rem;
+  }
+
+  .visual-intro-meta {
+    display: none;
+  }
+
+  .visual-intro-scroll {
+    right: 0.7rem;
+    bottom: 1rem;
+    left: auto;
+    padding-inline: 0.45rem;
+    font-size: 0.51rem;
+    transform: none;
+  }
+
   .hero {
     padding-top: 8.1rem;
   }
@@ -1981,6 +2239,19 @@ button {
     width: min(calc(100% - 1.4rem), var(--shell));
   }
 
+  .visual-intro-title {
+    font-size: clamp(3rem, 16.2vw, 4rem);
+  }
+
+  .visual-intro-title em {
+    white-space: normal;
+  }
+
+  .visual-intro-scroll span {
+    max-width: 9rem;
+    text-align: right;
+  }
+
   .hero {
     padding-top: 7.5rem;
   }
@@ -2084,6 +2355,7 @@ button {
 
 @media (forced-colors: active) {
   .brand-mark,
+  .visual-intro-scroll i,
   .button,
   .signal-chip,
   .constellation-console,

@@ -1,0 +1,285 @@
+{
+  "desktop": {
+    "prompt": {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux-2-klein-base-4b-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "10": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "batch_size": 1,
+          "height": 864,
+          "width": 1536
+        }
+      },
+      "11": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "guider": [
+            "6",
+            0
+          ],
+          "latent_image": [
+            "10",
+            0
+          ],
+          "noise": [
+            "7",
+            0
+          ],
+          "sampler": [
+            "8",
+            0
+          ],
+          "sigmas": [
+            "9",
+            0
+          ]
+        }
+      },
+      "12": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "11",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "13": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "filename_prefix": "magrathea-site/landing-v1/seed-34071984",
+          "images": [
+            "12",
+            0
+          ]
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen_3_4b.safetensors",
+          "device": "default",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "An original cinematic science-fiction scene representing Magrathea as a planetary atelier: a colossal newly constructed planet suspended in deep space, half natural ocean-and-cloud world and half precision geometric orbital engineering, luminous teal atmospheric rim, elegant concentric construction rings and fine architectural arcs, three small illuminated satellites in mint, warm amber, and cool blue suggesting code, trust, and data, monumental scale, optimistic and sophisticated, premium editorial science-fiction concept art, realistic yet poetic, restrained palette of deep night teal, sea green, pale mint, and warm amber, dark clean negative space on the left for website typography, focal planet on the right third, wide panoramic composition, no people, no text, no logo, no watermark"
+        }
+      },
+      "5": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "words, text, typography, letters, numbers, logo, watermark, signature, user interface, screenshot, collage, border, cartoon, anime, oversaturated magenta, bright red, cluttered composition, many planets, faces, people"
+        }
+      },
+      "6": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "cfg": 5.0,
+          "model": [
+            "1",
+            0
+          ],
+          "negative": [
+            "5",
+            0
+          ],
+          "positive": [
+            "4",
+            0
+          ]
+        }
+      },
+      "7": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 34071984
+        }
+      },
+      "8": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "9": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "height": 864,
+          "steps": 24,
+          "width": 1536
+        }
+      }
+    },
+    "promptId": "d0484c92-80c1-4a50-8d69-370390dd038a",
+    "seed": 34071984
+  },
+  "portrait": {
+    "prompt": {
+      "1": {
+        "class_type": "UNETLoader",
+        "inputs": {
+          "unet_name": "flux-2-klein-base-4b-fp8.safetensors",
+          "weight_dtype": "default"
+        }
+      },
+      "10": {
+        "class_type": "EmptyFlux2LatentImage",
+        "inputs": {
+          "batch_size": 1,
+          "height": 1216,
+          "width": 832
+        }
+      },
+      "11": {
+        "class_type": "SamplerCustomAdvanced",
+        "inputs": {
+          "guider": [
+            "6",
+            0
+          ],
+          "latent_image": [
+            "10",
+            0
+          ],
+          "noise": [
+            "7",
+            0
+          ],
+          "sampler": [
+            "8",
+            0
+          ],
+          "sigmas": [
+            "9",
+            0
+          ]
+        }
+      },
+      "12": {
+        "class_type": "VAEDecode",
+        "inputs": {
+          "samples": [
+            "11",
+            0
+          ],
+          "vae": [
+            "3",
+            0
+          ]
+        }
+      },
+      "13": {
+        "class_type": "SaveImage",
+        "inputs": {
+          "filename_prefix": "magrathea-site/landing-v1/portrait-seed-44071985",
+          "images": [
+            "12",
+            0
+          ]
+        }
+      },
+      "2": {
+        "class_type": "CLIPLoader",
+        "inputs": {
+          "clip_name": "qwen_3_4b.safetensors",
+          "device": "default",
+          "type": "flux2"
+        }
+      },
+      "3": {
+        "class_type": "VAELoader",
+        "inputs": {
+          "vae_name": "flux2-vae.safetensors"
+        }
+      },
+      "4": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "An original cinematic science-fiction scene representing Magrathea as a planetary atelier: a colossal newly constructed planet suspended in deep space, half natural ocean-and-cloud world and half precision geometric orbital engineering, luminous teal atmospheric rim, elegant concentric construction rings and fine architectural arcs, three small illuminated satellites in mint, warm amber, and cool blue suggesting code, trust, and data, monumental scale, optimistic and sophisticated, premium editorial science-fiction concept art, realistic yet poetic, restrained palette of deep night teal, sea green, pale mint, and warm amber, dark clean negative space on the left for website typography, vertical cinematic composition, focal planet centered with its complete rings visible, continuous seamless deep-space background from top to bottom, no people, no text, no logo, no watermark"
+        }
+      },
+      "5": {
+        "class_type": "CLIPTextEncode",
+        "inputs": {
+          "clip": [
+            "2",
+            0
+          ],
+          "text": "words, text, typography, letters, numbers, logo, watermark, signature, user interface, screenshot, collage, border, cartoon, anime, oversaturated magenta, bright red, cluttered composition, many planets, faces, people"
+        }
+      },
+      "6": {
+        "class_type": "CFGGuider",
+        "inputs": {
+          "cfg": 5.0,
+          "model": [
+            "1",
+            0
+          ],
+          "negative": [
+            "5",
+            0
+          ],
+          "positive": [
+            "4",
+            0
+          ]
+        }
+      },
+      "7": {
+        "class_type": "RandomNoise",
+        "inputs": {
+          "noise_seed": 44071985
+        }
+      },
+      "8": {
+        "class_type": "KSamplerSelect",
+        "inputs": {
+          "sampler_name": "euler"
+        }
+      },
+      "9": {
+        "class_type": "Flux2Scheduler",
+        "inputs": {
+          "height": 1216,
+          "steps": 24,
+          "width": 832
+        }
+      }
+    },
+    "promptId": "81cbd01d-f366-41af-8c0d-57c9eafa69be",
+    "seed": 44071985
+  },
+  "schema": "magrathea-comfyui-artwork-workflow-v1"
+}

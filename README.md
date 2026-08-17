@@ -14,12 +14,23 @@ The first product worlds are:
 The site uses an original presentation composition while deliberately carrying
 forward the visual language established by the Magrathea Git forge shell:
 
+- a full-viewport planetary atelier artwork before the original constellation hero;
 - night teal, mint, amber, and cool-canvas design tokens;
 - orbital/cartographic motifs;
 - the byte-identical original `magrathea-orbit.svg` artwork;
 - explicit status labels and restrained product claims.
 
-Asset provenance is recorded in
+The planetary artwork was generated locally in ComfyUI with Flux.2 Klein, without
+reference images. Separate desktop and portrait compositions keep the world legible
+without downloading a desktop crop on mobile. AVIF and WebP delivery renditions stay
+below 65 KB; JPEG provides the fallback. The lossless ComfyUI outputs, exact API
+workflows, model hashes, prompts, seeds, and derivative hashes are retained in:
+
+- [`assets/img/magrathea-world.provenance.json`](assets/img/magrathea-world.provenance.json);
+- [`assets/img/magrathea-world.comfyui.json`](assets/img/magrathea-world.comfyui.json);
+- [`assets/img/source/`](assets/img/source/).
+
+Orbit-mark provenance remains recorded in
 [`assets/img/magrathea-orbit.provenance.json`](assets/img/magrathea-orbit.provenance.json).
 No remote font, analytics, advertising, or runtime framework is used.
 
@@ -43,9 +54,11 @@ npm run validate
 ```
 
 The validation contract checks semantic structure, truthful product tokens,
-local links/assets, keyboard and mobile navigation, reduced-motion behavior,
-JavaScript-free rendering, console/network failures, responsive overflow, and
-the dedicated 404 page. Browser screenshots are written to `test-results/`.
+artwork provenance and hashes, responsive rendition selection, preservation and
+ordering of the original hero and sections, keyboard and mobile navigation,
+reduced-motion behavior, JavaScript-free rendering, console/network failures,
+responsive overflow, and the dedicated 404 page. Browser screenshots are written
+to `test-results/`.
 
 ## Deployment
 

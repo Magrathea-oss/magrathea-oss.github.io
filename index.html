@@ -72,7 +72,61 @@
     </header>
 
     <main id="main-content">
-      <section class="hero" aria-labelledby="hero-title">
+      <section id="magrathea-world" class="visual-intro" aria-labelledby="visual-intro-title">
+        <picture class="visual-intro-media">
+          <source
+            media="(max-width: 48rem)"
+            type="image/avif"
+            srcset="assets/img/magrathea-world-portrait.avif"
+          />
+          <source
+            media="(max-width: 48rem)"
+            type="image/webp"
+            srcset="assets/img/magrathea-world-portrait.webp"
+          />
+          <source
+            media="(max-width: 48rem)"
+            type="image/jpeg"
+            srcset="assets/img/magrathea-world-portrait.jpg"
+          />
+          <source type="image/avif" srcset="assets/img/magrathea-world-desktop.avif" />
+          <source type="image/webp" srcset="assets/img/magrathea-world-desktop.webp" />
+          <img
+            class="visual-intro-art"
+            src="assets/img/magrathea-world-desktop.jpg"
+            width="1536"
+            height="864"
+            alt="An engineered ocean planet enclosed by luminous orbital construction rings, with colored satellites representing Magrathea's code, trust, and data systems."
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
+
+        <div class="visual-intro-shade" aria-hidden="true"></div>
+        <div class="shell visual-intro-layout">
+          <div class="visual-intro-copy">
+            <p class="visual-intro-coordinate">MAGRATHEA / WORLD ATELIER / 01</p>
+            <p id="visual-intro-title" class="visual-intro-title">
+              Worlds,<br />
+              <em>made to measure.</em>
+            </p>
+            <p class="visual-intro-lead">Code. Trust. Data. In your orbit.</p>
+          </div>
+
+          <div class="visual-intro-meta" aria-label="Artwork provenance summary">
+            <span>Original generative artwork</span>
+            <span>ComfyUI / Flux.2 Klein</span>
+          </div>
+        </div>
+
+        <a class="visual-intro-scroll" href="#overview">
+          <span>Enter the constellation</span>
+          <i aria-hidden="true"></i>
+        </a>
+      </section>
+
+      <section id="overview" class="hero" aria-labelledby="hero-title">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-orbit hero-orbit--one" aria-hidden="true"></div>
         <div class="hero-orbit hero-orbit--two" aria-hidden="true"></div>

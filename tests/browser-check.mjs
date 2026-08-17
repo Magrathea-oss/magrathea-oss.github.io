@@ -64,6 +64,31 @@ try {
   watchPage(desktop, "desktop");
   const desktopResponse = await desktop.goto(`${baseUrl}/`, { waitUntil: "networkidle" });
   check(desktopResponse?.status() === 200, "desktop home did not return HTTP 200");
+  const visualIntro = desktop.locator("#magrathea-world");
+  const visualArtwork = visualIntro.locator(".visual-intro-art");
+  check(await visualIntro.isVisible(), "desktop generated Magrathea landing is not visible");
+  check(
+    await visualArtwork.evaluate((image) => image.complete && image.naturalWidth === 1536 && image.naturalHeight === 864),
+    "desktop generated Magrathea artwork did not load at its recorded dimensions",
+  );
+  check(
+    await visualArtwork.evaluate((image) => /magrathea-world-desktop\.(avif|webp|jpg)$/.test(new URL(image.currentSrc).pathname)),
+    "desktop did not select a desktop Magrathea artwork rendition",
+  );
+  const landingOrder = await desktop.evaluate(() => {
+    const intro = document.querySelector("#magrathea-world").getBoundingClientRect();
+    const hero = document.querySelector(".hero").getBoundingClientRect();
+    const firstSection = document.querySelector("main > section");
+    return {
+      firstSectionIsArtwork: firstSection?.id === "magrathea-world",
+      artworkHeight: intro.height,
+      viewportHeight: window.innerHeight,
+      heroAfterArtwork: hero.top >= intro.bottom - 1,
+    };
+  });
+  check(landingOrder.firstSectionIsArtwork, "generated artwork is not the first main section");
+  check(landingOrder.artworkHeight >= landingOrder.viewportHeight * 0.9, "desktop artwork is not a full landing view");
+  check(landingOrder.heroAfterArtwork, "existing constellation hero was not moved below the artwork");
   check(
     await desktop.getByRole("heading", { level: 1, name: /Software made to measure/i }).isVisible(),
     "desktop hero heading is not visible",
@@ -131,6 +156,15 @@ try {
   const mobile = await mobileContext.newPage();
   watchPage(mobile, "mobile");
   await mobile.goto(`${baseUrl}/`, { waitUntil: "networkidle" });
+  const mobileArtwork = mobile.locator("#magrathea-world .visual-intro-art");
+  check(
+    await mobileArtwork.evaluate((image) => image.complete && image.naturalWidth === 832 && image.naturalHeight === 1216),
+    "mobile generated Magrathea artwork did not load at its recorded dimensions",
+  );
+  check(
+    await mobileArtwork.evaluate((image) => /magrathea-world-portrait\.(avif|webp|jpg)$/.test(new URL(image.currentSrc).pathname)),
+    "mobile did not select a portrait Magrathea artwork rendition",
+  );
   const menu = mobile.getByRole("button", { name: /Menu/i });
   check(await menu.isVisible(), "mobile menu control is not visible");
   await menu.click();
@@ -177,6 +211,7 @@ try {
   const noScript = await noScriptContext.newPage();
   watchPage(noScript, "no-script");
   await noScript.goto(`${baseUrl}/`, { waitUntil: "networkidle" });
+  check(await noScript.locator("#magrathea-world .visual-intro-art").isVisible(), "JavaScript-free generated landing is not visible");
   check(
     await noScript.getByRole("heading", { level: 1, name: /Software made to measure/i }).isVisible(),
     "JavaScript-free hero heading is not visible",

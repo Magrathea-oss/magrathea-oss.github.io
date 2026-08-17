@@ -71,6 +71,16 @@ required_files = [
     "assets/js/site.js",
     "assets/img/magrathea-orbit.svg",
     "assets/img/magrathea-orbit.provenance.json",
+    "assets/img/magrathea-world-desktop.avif",
+    "assets/img/magrathea-world-desktop.webp",
+    "assets/img/magrathea-world-desktop.jpg",
+    "assets/img/magrathea-world-portrait.avif",
+    "assets/img/magrathea-world-portrait.webp",
+    "assets/img/magrathea-world-portrait.jpg",
+    "assets/img/source/magrathea-world-desktop-comfyui.png",
+    "assets/img/source/magrathea-world-portrait-comfyui.png",
+    "assets/img/magrathea-world.comfyui.json",
+    "assets/img/magrathea-world.provenance.json",
     "assets/img/og-card.png",
     "site.webmanifest",
     "robots.txt",
@@ -91,11 +101,62 @@ if index:
     require(html_tags and html_tags[0].get("lang") == "en", "home page must declare lang=en")
     for landmark in ("header", "nav", "main", "footer"):
         require(landmark in index.tags, f"home page is missing <{landmark}>")
-    require(sum(1 for tag, _ in index.headings if tag == "h1") == 1, "home page must contain exactly one h1")
-    require(any("skip-link" in a.get("class", "") for a in index.links), "home page needs a skip link")
+    require(
+        sum(1 for tag, _ in index.headings if tag == "h1") == 1,
+        "home page must contain exactly one h1",
+    )
+    require(
+        any("skip-link" in a.get("class", "") for a in index.links),
+        "home page needs a skip link",
+    )
 
-    for section_id in ("constellation", "git", "pki", "object-store", "method", "principles", "open-source"):
+    for section_id in (
+        "magrathea-world",
+        "constellation",
+        "git",
+        "pki",
+        "object-store",
+        "method",
+        "principles",
+        "open-source",
+    ):
         require(section_id in index.ids, f"home page is missing #{section_id}")
+
+    require(
+        index.text.find('id="magrathea-world"') < index.text.find('class="hero"'),
+        "generated Magrathea artwork must precede the existing hero",
+    )
+    visual_images = [
+        image for image in index.images
+        if "visual-intro-art" in image.get("class", "")
+    ]
+    require(len(visual_images) == 1, "home page needs exactly one visual-intro artwork image")
+    if visual_images:
+        artwork = visual_images[0]
+        require(
+            "Magrathea" in artwork.get("alt", ""),
+            "generated artwork needs a useful Magrathea alt",
+        )
+        require(
+            artwork.get("fetchpriority") == "high",
+            "landing artwork must be high priority",
+        )
+        require(
+            artwork.get("width") == "1536" and artwork.get("height") == "864",
+            "landing artwork dimensions must be explicit",
+        )
+    picture_sources = [attrs for tag, attrs in index.attrs if tag == "source"]
+    for source in (
+        "assets/img/magrathea-world-desktop.avif",
+        "assets/img/magrathea-world-desktop.webp",
+        "assets/img/magrathea-world-portrait.avif",
+        "assets/img/magrathea-world-portrait.webp",
+        "assets/img/magrathea-world-portrait.jpg",
+    ):
+        require(
+            any(attrs.get("srcset") == source for attrs in picture_sources),
+            f"responsive artwork source is missing: {source}",
+        )
 
     for phrase in (
         "software",
@@ -168,6 +229,7 @@ if css_path.is_file():
         "--night: #08282d",
         "--accent: #0c776e",
         "--signal: #e59a43",
+        ".visual-intro",
         ".product-grid",
         ".orbit-map",
     ):
@@ -186,6 +248,56 @@ if logo_path.is_file() and provenance_path.is_file():
     digest = hashlib.sha256(logo_path.read_bytes()).hexdigest()
     require(digest == provenance.get("sha256"), "orbit artwork does not match recorded provenance")
     require(provenance.get("thirdPartySource") is None, "orbit artwork must remain original Magrathea artwork")
+
+art_provenance_path = ROOT / "assets/img/magrathea-world.provenance.json"
+art_workflow_path = ROOT / "assets/img/magrathea-world.comfyui.json"
+if art_provenance_path.is_file() and art_workflow_path.is_file():
+    art_provenance = json.loads(art_provenance_path.read_text(encoding="utf-8"))
+    art_workflow = json.loads(art_workflow_path.read_text(encoding="utf-8"))
+    require(
+        art_provenance.get("schema") == "magrathea-generated-artwork-provenance-v1",
+        "generated artwork provenance schema differs",
+    )
+    require(
+        art_workflow.get("schema") == "magrathea-comfyui-artwork-workflow-v1",
+        "generated artwork workflow schema differs",
+    )
+    require(
+        art_provenance.get("generation", {}).get("thirdPartyReferenceImages") == [],
+        "generated artwork must not claim unrecorded reference images",
+    )
+    for rendition in ("desktop", "portrait"):
+        prompt = art_workflow.get(rendition, {}).get("prompt", {})
+        require(prompt, f"generated artwork workflow is missing {rendition}")
+        require(
+            not any(node.get("class_type") == "LoadImage" for node in prompt.values()),
+            f"generated {rendition} artwork unexpectedly depends on a reference image",
+        )
+        for artifact in art_provenance.get("outputs", {}).get(rendition, []):
+            path = ROOT / artifact.get("path", "")
+            require(
+                path.is_file(),
+                f"generated artwork output is missing: {artifact.get('path')}",
+            )
+            if path.is_file():
+                require(
+                    path.stat().st_size == artifact.get("sizeBytes"),
+                    f"generated artwork size differs: {artifact.get('path')}",
+                )
+                require(
+                    hashlib.sha256(path.read_bytes()).hexdigest()
+                    == artifact.get("sha256"),
+                    f"generated artwork hash differs: {artifact.get('path')}",
+                )
+    delivered = [
+        ROOT / f"assets/img/magrathea-world-{rendition}.{extension}"
+        for rendition in ("desktop", "portrait")
+        for extension in ("avif", "webp", "jpg")
+    ]
+    require(
+        all(path.stat().st_size < 125_000 for path in delivered if path.is_file()),
+        "a delivered landing artwork exceeds 125 KB",
+    )
 
 manifest_path = ROOT / "site.webmanifest"
 if manifest_path.is_file():

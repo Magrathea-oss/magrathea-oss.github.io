@@ -1,7 +1,8 @@
 {
-  "createdUtc": "2026-08-17T18:18:58Z",
+  "artDirection": "A colossal interior planet-making factory visibly assembling unfinished worlds; no generic decorative ringed planet.",
+  "createdUtc": "2026-08-17T22:21:45Z",
   "derivativeCommands": [
-    "magick INPUT -strip -sampling-factor 4:2:0 -interlace Plane -quality 88 OUTPUT.jpg",
+    "magick INPUT -strip -sampling-factor 4:2:0 -interlace Plane -quality 72 OUTPUT.jpg",
     "magick INPUT -strip -quality 84 -define webp:method=6 OUTPUT.webp",
     "avifenc -s 6 -q 68 --ignore-exif --ignore-xmp --ignore-icc INPUT OUTPUT.avif"
   ],
@@ -9,19 +10,19 @@
     "desktop": {
       "cfg": 5.0,
       "height": 864,
-      "promptId": "d0484c92-80c1-4a50-8d69-370390dd038a",
+      "promptId": "6c801414-53cb-454c-90d2-30eef05a9a93",
       "sampler": "euler",
-      "seed": 34071984,
-      "steps": 24,
+      "seed": 59010013,
+      "steps": 28,
       "width": 1536
     },
     "portrait": {
       "cfg": 5.0,
       "height": 1216,
-      "promptId": "81cbd01d-f366-41af-8c0d-57c9eafa69be",
+      "promptId": "d2f7dfa8-e530-4aeb-aed3-63787d014906",
       "sampler": "euler",
-      "seed": 44071985,
-      "steps": 24,
+      "seed": 69010015,
+      "steps": 28,
       "width": 832
     },
     "thirdPartyReferenceImages": [],
@@ -50,53 +51,57 @@
     "desktop": [
       {
         "path": "assets/img/source/magrathea-world-desktop-comfyui.png",
-        "sha256": "41bfda3f0c1685722a22751a239408ed72ec6cab9444ea73502f8631c894f7f0",
-        "sizeBytes": 1158260
+        "sha256": "4654f75d302b08417afaa41f9e749f7ab95a379a72caf54af1ba35b1987910f4",
+        "sizeBytes": 1686800
       },
       {
         "path": "assets/img/magrathea-world-desktop.avif",
-        "sha256": "d1ff642cc5deeb273596712d87adb51d5386f7e603d9ec8dc84a9b11b28fe43e",
-        "sizeBytes": 48322
+        "sha256": "10cdb6e1cade5f76667d04138c8b66e32b0d036a8b7b7dff42566249b941e44a",
+        "sizeBytes": 110097
       },
       {
         "path": "assets/img/magrathea-world-desktop.webp",
-        "sha256": "2cbdcb593252a5f1738e56163bde427218ccbdee8c7f081cc5deec91da7ecb0a",
-        "sizeBytes": 50546
+        "sha256": "ce80c2f308cc728820725a5266ae6a9d3d69ec4dedd78e4105e66569e5bc2c0c",
+        "sizeBytes": 110424
       },
       {
         "path": "assets/img/magrathea-world-desktop.jpg",
-        "sha256": "8dff571478933990e1c300921d3bcd281391903265e5fea1321386930f1d8bc6",
-        "sizeBytes": 98762
+        "sha256": "7adcae51b84c386312a5948ce8ddfc497e6380c8644758fed7699d71cd1919d3",
+        "sizeBytes": 107256
       }
     ],
     "portrait": [
       {
         "path": "assets/img/source/magrathea-world-portrait-comfyui.png",
-        "sha256": "8489d8977a0c1139fb59f7c6017c25e76acaf75df5bad215425fe881b5c41f1a",
-        "sizeBytes": 1565384
+        "sha256": "bdbd6608424759a45e84a6d18872e83de3283803703204d5debf01e36d57c8ea",
+        "sizeBytes": 1740539
       },
       {
         "path": "assets/img/magrathea-world-portrait.avif",
-        "sha256": "4dfa4d4aa618c0180a7561782e0f1ffe18280dabab99837585b93d9e01565dde",
-        "sizeBytes": 56131
+        "sha256": "e0db0b1b1690eea6130146bf12c02ca47c52099c635423c0aa08253c08c717e6",
+        "sizeBytes": 108134
       },
       {
         "path": "assets/img/magrathea-world-portrait.webp",
-        "sha256": "2cf3ad46a7e81504880ffafeee006a9fcb7380732c1b791ab9412ad401b16640",
-        "sizeBytes": 62794
+        "sha256": "0340269510f297330c3cf14b0b734348345108a6a937c31f9c0a461022ea09d4",
+        "sizeBytes": 111914
       },
       {
         "path": "assets/img/magrathea-world-portrait.jpg",
-        "sha256": "1ba4d989786a6df134033a3492f32f4afa553a392a271c846372cf41d2665f2f",
-        "sizeBytes": 111943
+        "sha256": "88c51f1d8a117d855c84da811e000887960f56914edfcfd13ee1a4ea30b4f207",
+        "sizeBytes": 115340
       }
     ]
   },
   "schema": "magrathea-generated-artwork-provenance-v1",
   "selection": {
-    "criterion": "Brand-aligned planetary construction motif, clear composition, and responsive negative space.",
+    "criterion": "Factory identity, visible active world construction, responsive composition, absence of generic planetary rings, and absence of anatomical artifacts.",
     "desktopCandidatesGenerated": 3,
-    "portraitCandidatesGenerated": 2
+    "portraitCandidatesGenerated": 4
   },
-  "title": "Magrathea planetary atelier"
+  "supersedes": {
+    "commit": "0460c306112d965374cc6d41a8beff48525623c2",
+    "reason": "The prior ringed-planet artwork was visually rejected as generic and not recognizably Magrathea."
+  },
+  "title": "Magrathea planetary works"
 }

@@ -10,7 +10,7 @@ Feature: Present the Magrathea OSS software constellation
 
   Scenario: Open on an original view of Magrathea
     Given a visitor arrives at the top of the presentation site
-    Then an original generated planetary artwork represents Magrathea
+    Then an original generated planet-making factory represents Magrathea
     And responsive desktop and portrait artwork is available
     And the artwork appears before the existing constellation hero
     And every existing product, method, principle, and open-source section remains below it

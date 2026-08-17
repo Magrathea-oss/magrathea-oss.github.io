@@ -14,17 +14,18 @@ The first product worlds are:
 The site uses an original presentation composition while deliberately carrying
 forward the visual language established by the Magrathea Git forge shell:
 
-- a full-viewport planetary atelier artwork before the original constellation hero;
+- a full-viewport planet-making factory before the original constellation hero;
 - night teal, mint, amber, and cool-canvas design tokens;
 - orbital/cartographic motifs;
 - the byte-identical original `magrathea-orbit.svg` artwork;
 - explicit status labels and restrained product claims.
 
-The planetary artwork was generated locally in ComfyUI with Flux.2 Klein, without
-reference images. Separate desktop and portrait compositions keep the world legible
-without downloading a desktop crop on mobile. AVIF and WebP delivery renditions stay
-below 65 KB; JPEG provides the fallback. The lossless ComfyUI outputs, exact API
-workflows, model hashes, prompts, seeds, and derivative hashes are retained in:
+The factory artwork was generated locally in ComfyUI with Flux.2 Klein, without
+reference images. Separate desktop and portrait compositions keep the active world
+construction legible without downloading a desktop crop on mobile. All delivery
+renditions stay below 116 KB; JPEG provides the fallback. The lossless ComfyUI
+outputs, exact API workflows, model hashes, prompts, seeds, and derivative hashes
+are retained in:
 
 - [`assets/img/magrathea-world.provenance.json`](assets/img/magrathea-world.provenance.json);
 - [`assets/img/magrathea-world.comfyui.json`](assets/img/magrathea-world.comfyui.json);

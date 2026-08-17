@@ -57,7 +57,7 @@
       "13": {
         "class_type": "SaveImage",
         "inputs": {
-          "filename_prefix": "magrathea-site/landing-v1/seed-34071984",
+          "filename_prefix": "magrathea-site/factory-v2/seed-59010013",
           "images": [
             "12",
             0
@@ -85,7 +85,7 @@
             "2",
             0
           ],
-          "text": "An original cinematic science-fiction scene representing Magrathea as a planetary atelier: a colossal newly constructed planet suspended in deep space, half natural ocean-and-cloud world and half precision geometric orbital engineering, luminous teal atmospheric rim, elegant concentric construction rings and fine architectural arcs, three small illuminated satellites in mint, warm amber, and cool blue suggesting code, trust, and data, monumental scale, optimistic and sophisticated, premium editorial science-fiction concept art, realistic yet poetic, restrained palette of deep night teal, sea green, pale mint, and warm amber, dark clean negative space on the left for website typography, focal planet on the right third, wide panoramic composition, no people, no text, no logo, no watermark"
+          "text": "Original cinematic science-fiction concept art of Magrathea as an ancient planet-making factory, not merely a planet. Interior of a colossal hollow machine world: an immense subterranean industrial cavern opens onto deep space. On the right, a half-built blue ocean planet floats inside a titanic mechanical assembly cradle; one hemisphere has oceans, continents, clouds and atmosphere, while the unfinished hemisphere visibly exposes luminous geodesic skeleton, layered mantle, mechanical ribs and incomplete terrain. Gigantic articulated construction arms, dry docks, gantries, foundry towers, suspended bridges and planet-scale machinery are physically anchored to the cavern walls and are actively assembling the world. Several smaller unfinished planetary shells wait in distant construction bays, giving overwhelming scale. Sophisticated, mysterious and monumental, ancient technology awakened after millennia, dark night teal and graphite machinery, mint energy conduits and restrained warm amber work lights, cinematic volumetric shafts, realistic premium editorial concept art, intricate but readable. Wide panoramic website composition with clean dark negative space on the left for typography, primary factory and half-built world on the right two thirds. No people, no words, no logo, no watermark."
         }
       },
       "5": {
@@ -95,7 +95,7 @@
             "2",
             0
           ],
-          "text": "words, text, typography, letters, numbers, logo, watermark, signature, user interface, screenshot, collage, border, cartoon, anime, oversaturated magenta, bright red, cluttered composition, many planets, faces, people"
+          "text": "generic Saturn, decorative planet rings, isolated finished planet, single planet floating in empty space, simple orbit, fantasy castle, spaceship closeup, bright city skyline, words, text, typography, letters, numbers, logo, watermark, signature, user interface, screenshot, collage, frame, cartoon, anime, toy, oversaturated magenta, bright red, clutter without focal point, people, faces"
         }
       },
       "6": {
@@ -119,7 +119,7 @@
       "7": {
         "class_type": "RandomNoise",
         "inputs": {
-          "noise_seed": 34071984
+          "noise_seed": 59010013
         }
       },
       "8": {
@@ -132,13 +132,13 @@
         "class_type": "Flux2Scheduler",
         "inputs": {
           "height": 864,
-          "steps": 24,
+          "steps": 28,
           "width": 1536
         }
       }
     },
-    "promptId": "d0484c92-80c1-4a50-8d69-370390dd038a",
-    "seed": 34071984
+    "promptId": "6c801414-53cb-454c-90d2-30eef05a9a93",
+    "seed": 59010013
   },
   "portrait": {
     "prompt": {
@@ -198,7 +198,7 @@
       "13": {
         "class_type": "SaveImage",
         "inputs": {
-          "filename_prefix": "magrathea-site/landing-v1/portrait-seed-44071985",
+          "filename_prefix": "magrathea-site/factory-v2/portrait-seed-69010015",
           "images": [
             "12",
             0
@@ -226,7 +226,7 @@
             "2",
             0
           ],
-          "text": "An original cinematic science-fiction scene representing Magrathea as a planetary atelier: a colossal newly constructed planet suspended in deep space, half natural ocean-and-cloud world and half precision geometric orbital engineering, luminous teal atmospheric rim, elegant concentric construction rings and fine architectural arcs, three small illuminated satellites in mint, warm amber, and cool blue suggesting code, trust, and data, monumental scale, optimistic and sophisticated, premium editorial science-fiction concept art, realistic yet poetic, restrained palette of deep night teal, sea green, pale mint, and warm amber, dark clean negative space on the left for website typography, vertical cinematic composition, focal planet centered with its complete rings visible, continuous seamless deep-space background from top to bottom, no people, no text, no logo, no watermark"
+          "text": "Original cinematic science-fiction concept art of Magrathea as an ancient planet-making factory, not merely a planet. Interior of a colossal hollow machine world: an immense subterranean industrial cavern opens onto deep space. On the right, a half-built blue ocean planet floats inside a titanic mechanical assembly cradle; one hemisphere has oceans, continents, clouds and atmosphere, while the unfinished hemisphere visibly exposes luminous geodesic skeleton, layered mantle, hexagonal structural lattice, open terrain plates, luminous engineering scaffolds and incomplete continents. Gigantic articulated construction arms, dry docks, gantries, foundry towers, suspended bridges and planet-scale machinery are physically anchored to the cavern walls and are actively assembling the world. Several smaller unfinished planetary shells wait in distant construction bays, giving overwhelming scale. Sophisticated, mysterious and monumental, ancient technology awakened after millennia, dark night teal and graphite machinery, mint energy conduits and restrained warm amber work lights, cinematic volumetric shafts, realistic premium editorial concept art, intricate but readable. Vertical cinematic website composition: the half-built world and multiple articulated factory arms fill the upper and middle frame, while the lower foreground recedes naturally into continuous shadowed cavern machinery for readable typography. The image remains one continuous interior with no artificial horizontal division. No people, no words, no logo, no watermark."
         }
       },
       "5": {
@@ -236,7 +236,7 @@
             "2",
             0
           ],
-          "text": "words, text, typography, letters, numbers, logo, watermark, signature, user interface, screenshot, collage, border, cartoon, anime, oversaturated magenta, bright red, cluttered composition, many planets, faces, people"
+          "text": "generic Saturn, decorative planet rings, isolated finished planet, single planet floating in empty space, simple orbit, fantasy castle, spaceship closeup, bright city skyline, words, text, typography, letters, numbers, logo, watermark, signature, user interface, screenshot, collage, frame, cartoon, anime, toy, oversaturated magenta, bright red, clutter without focal point, skeleton, rib cage, bones, anatomy, organic body parts, people, faces"
         }
       },
       "6": {
@@ -260,7 +260,7 @@
       "7": {
         "class_type": "RandomNoise",
         "inputs": {
-          "noise_seed": 44071985
+          "noise_seed": 69010015
         }
       },
       "8": {
@@ -273,13 +273,13 @@
         "class_type": "Flux2Scheduler",
         "inputs": {
           "height": 1216,
-          "steps": 24,
+          "steps": 28,
           "width": 832
         }
       }
     },
-    "promptId": "81cbd01d-f366-41af-8c0d-57c9eafa69be",
-    "seed": 44071985
+    "promptId": "d2f7dfa8-e530-4aeb-aed3-63787d014906",
+    "seed": 69010015
   },
   "schema": "magrathea-comfyui-artwork-workflow-v1"
 }
